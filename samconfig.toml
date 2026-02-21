@@ -1,8 +1,8 @@
 version = 0.1
 
 [default.deploy.parameters]
-stack_name = "todo-list-staging"
+stack_name = "todo-list-production"
 region = "us-east-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
-parameter_overrides = "TableName=TodoTableStaging"
+parameter_overrides = "TableName=TodoTableProduction"
