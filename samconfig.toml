@@ -1,8 +1,16 @@
 version = 0.1
 
-[default.deploy.parameters]
-stack_name = "todo-list-staging"
-region = "us-east-1"
-confirm_changeset = true
+[staging]
+[staging.deploy]
+[staging.deploy.parameters]
+stack_name = "staging-todo-list-aws"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-i2jzmtoegtaj"
+s3_prefix = "staging-todo-list-aws"
 capabilities = "CAPABILITY_IAM"
-parameter_overrides = "TableName=TodoTableStaging"
+parameter_overrides = "Stage=\"staging\""
+image_repositories = []
+confirm_changeset = true
+disable_rollback = true
+
+[staging.global.parameters]
+region = "us-east-1"
